@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ty.lolbox" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>LolBox</name>
+    <description>
+        League of Legend status checker and tool box.
+    </description>
+    <author email="tianhsky@gmail.com" href="http://www.tianyuhuang.com">
+        Tianyu Huang
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="icon_128x128.png" />
+    <!-- <preference name="orientation" value="portrait" /> -->
+</widget>

@@ -1,0 +1,48 @@
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+
+.player-search-bar{
+	margin: 0px !important;
+}
+.region-item .item-content{
+	padding-right: 10px !important;
+}
+
+
+.purple-bg{
+	background-color: #FE2EF7;
+	color: white;
+	font-weight: bold;
+}
+.blue-bg{
+	background-color: #58D3F7;
+	color: white;
+	font-weight: bold;
+}
+
+.purple-tab{
+	color: #FE2EF7 !important;
+	font-weight: bold;
+}
+.blue-tab{
+	color: #58D3F7 !important;
+	font-weight: bold;
+}
+.tools-tab{
+	font-weight: bold;
+}
+
+.champion-item{
+	padding: 0px;
+	margin: 0px;
+}
+.champion-row.purple{
+	border-left: 4px solid #FE2EF7;
+}
+.champion-row.blue{
+	border-left: 4px solid #58D3F7;
+}
