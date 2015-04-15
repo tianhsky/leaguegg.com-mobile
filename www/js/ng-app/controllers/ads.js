@@ -1,4 +1,4 @@
-ang.controller('AdsCtrl', ['$scope',
+app.ang.controller('AdsCtrl', ['$scope',
     function($scope) {
      
 

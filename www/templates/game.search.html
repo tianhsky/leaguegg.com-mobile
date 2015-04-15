@@ -1,50 +1,38 @@
-<ion-header-bar align-title="center" class="bar-dark">
-<h1 class="title">Realtime Game</h1>
-</ion-header-bar>
-<ion-content class="has-header">
-<div class="list">
-	<div class="item item-divider">
-		Player
-	</div>
-	<div class="item">
-		<div class="list list-inset player-search-bar">
-			<label class="item item-input">
-				<i class="icon ion-search placeholder-icon"></i>
-				<input type="text" placeholder="Search" ng-model="criteria.player">
-			</label>
-			<button class="button button-block button-dark" ng-click="searchGame()">Search</button>
-		</div>
-	</div>
-	
-	<div class="item item-divider">
-		Region
-	</div>
-	<div class="item">
-		<div class="row">
-			<div class="col">
-				<div class="list">
-					<ion-radio ng-model="criteria.region" ng-value="'NA'" class="region-item">NA</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'EUW'" class="region-item">EUW</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'EUNE'" class="region-item">EUNE</ion-radio>
-				</div>
-			</div>
-			<div class="col">
-				<div class="list">
-					<ion-radio ng-model="criteria.region" ng-value="'BR'" class="region-item">BR</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'TR'" class="region-item">TR</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'RU'" class="region-item">RU</ion-radio>
-				</div>
-			</div>
-			<div class="col">
-				<div class="list">
-					<ion-radio ng-model="criteria.region" ng-value="'LAN'" class="region-item">LAN</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'LAS'" class="region-item">LAS</ion-radio>
-					<ion-radio ng-model="criteria.region" ng-value="'OCE'" class="region-item">OCE</ion-radio>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<ion-content class="has-header-no game-search-content">
+  <div class="list">
+    <div class="item form-item">
+      <div class="list list-inset search-bar">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Summoner Name" ng-model="criteria.summoner_name">
+        </label>
+        <button class="button button-block button-search" ng-click="searchGame()">Search</button>
+      </div>
+    </div>
+    <div class="item item-divider form-item">
+      <center>Region</center>
+    </div>
+    <div class="item form-item">
+      <div class="row region-bar">
+        <div class="col">
+          <div class="list">
+            <ion-radio ng-model="criteria.region" ng-value="'NA'" class="region-item">NA</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'EUW'" class="region-item">EUW</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'EUNE'" class="region-item">EUNE</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'LAN'" class="region-item">LAN</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'LAS'" class="region-item">LAS</ion-radio>
+          </div>
+        </div>
+        <div class="col">
+          <div class="list">
+            <ion-radio ng-model="criteria.region" ng-value="'KR'" class="region-item">KR</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'BR'" class="region-item">BR</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'TR'" class="region-item">TR</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'RU'" class="region-item">RU</ion-radio>
+            <ion-radio ng-model="criteria.region" ng-value="'OCE'" class="region-item">OCE</ion-radio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
-
-<div ui-view="ads"></div>

@@ -1,0 +1,313 @@
+// vars
+$dark-red: #F34747;
+$light-red: #FC6060;
+$trans-red: rgba(143, 45, 55, 0.8);
+$dark-blue: #3498C3;
+$light-blue: #6CCDF6;
+$trans-blue: rgba(76, 101, 117, 0.8);
+$trans-dark-blue: rgba(23, 27, 29, 0.51);
+$dark-orange: #E38034;
+$light-orange: #F79D59;
+$offense: #1DB2C7;
+$defense: #2BC4E3;
+$cs: #91A529;
+$win: #0E8013;
+$kill: rgb(41, 216, 41);
+$death: rgb(246, 138, 138);
+$assist: rgb(243, 243, 45);
+$inc-green: rgb(47, 214, 47);
+$dec-red: #C96831;
+// basic
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.has-top-nav-bar {
+  top: 43px;
+}
+
+// search
+.game-search-content {
+  padding-top: 40px;
+  background-image: url("../img/loading/Vladimir_3.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat;
+  .form-item {
+    background-color: $trans-dark-blue;
+    color: white;
+    border: none;
+  }
+  .search-bar {
+    margin: 0px !important;
+    background: transparent;
+    label {
+      background: transparent;
+    }
+    input {
+      color: white;
+    }
+    .button-search {
+      background: rgba(43, 145, 112, 0.5);
+      color: rgb(137, 188, 207);
+      font-size: 20px;
+      border-radius: 10px;
+      border-color: transparent;
+      &.activated {
+        background: rgba(99, 182, 155, 0.76) !important;
+      }
+    }
+  }
+  .region-bar {
+    .region-item {
+      background: transparent;
+      color: white;
+      .item-content {
+        background: transparent;
+        padding-right: 10px !important;
+      }
+    }
+  }
+}
+
+// game
+.team-content {
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat;
+  &.blue {
+    background-image: url("../img/loading/Sivir_5.jpg");
+  }
+  &.red {
+    background-image: url("../img/loading/Morgana_4.jpg");
+  }
+}
+
+.team-banner {
+  color: white;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  &.blue {
+    background-color: $dark-blue;
+  }
+  &.red {
+    background-color: $dark-red;
+  }
+  .team-title {
+    margin-top: 3px;
+  }
+  .banned_champions {
+    font-size: 8pt;
+  }
+}
+
+.team-tab {
+  &.red {
+    &.on {
+      color: $light-red !important;
+    }
+    &.off {
+      color: $dark-red !important;
+    }
+  }
+  &.blue {
+    &.on {
+      color: $light-blue !important;
+    }
+    &.off {
+      color: $dark-blue !important;
+    }
+  }
+  &.all {
+    &.on {
+      color: $light-orange !important;
+    }
+    &.off {
+      color: $dark-orange !important;
+    }
+  }
+}
+
+.champion-item {
+  padding: 0px !important;
+  margin: 10px !important;
+  &.blue {
+    background-color: $trans-blue;
+  }
+  &.red {
+    background-color: $trans-red;
+  }
+  .champion-title {
+    .col {
+      padding: 0px !important;
+    }
+    .summoner-name {
+      font-size: 12pt;
+      font-weight: bold;
+      color: white;
+    }
+    .kda {
+      font-size: 9pt;
+      font-style: italic;
+      color: rgb(126, 238, 238);
+      &.label {
+        font-size: 5pt;
+        font-style: normal;
+        text-align: center;
+        line-height: 8px;
+        margin-left: 5px;
+        margin-right: 3px;
+      }
+      .k {
+        color: $kill;
+      }
+      .d {
+        color: $death;
+      }
+      .a {
+        color: $assist;
+      }
+      .diff {
+        font-weight: bold;
+        &.inc {
+          color: $inc-green;
+        }
+        &.dec {
+          color: $dec-red;
+        }
+      }
+    }
+  }
+  .champion-row {
+    .champion-plays {
+      color: yellow;
+      font-size: 9pt;
+    }
+    .stream-status {
+      color: rgba(35, 202, 129, 0.96);
+      font-size: 10pt;
+      font-weight: bold;
+    }
+    .player-stats-row {
+      color: yellow;
+      .label {
+        font-size: 7pt;
+        font-style: italic;
+        text-align: center;
+        line-height: 10px;
+      }
+      .data {
+        font-size: 9pt;
+        font-style: normal;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.player-chart {
+  rect {
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-opacity: 0.2;
+    &.offense {
+      fill: $offense;
+    }
+    &.defense {
+      fill: $defense;
+    }
+    &.cs {
+      fill: $cs;
+    }
+    &.win {
+      fill: $win;
+    }
+  }
+  text {
+    fill: yellow;
+    font-weight: bold;
+    font: 10px sans-serif;
+    &.label {}
+    &.rate {
+      font-style: italic;
+    }
+    &.diff {
+      font-family: "FontAwesome";
+      font-weight: bold;
+      &.inc {
+        fill: $inc-green;
+      }
+      &.dec {
+        fill: $dec-red;
+      }
+    }
+    &.description {
+      font-style: italic;
+    }
+  }
+}
+
+.player-stat-content {
+  background-image: url("../img/loading/Poppy_2.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat;
+  .item {
+    background-color: rgba(13, 62, 85, 0.51);
+    color: white;
+    font-size: 9pt;
+    border: none;
+  }
+  .player-stat-row {
+    .label {
+      font-size: 8pt;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 15px;
+    }
+    .data {
+      line-height: 15px;
+    }
+  }
+}
+
+.twitchtv-player {
+  width: 100%;
+  height: 230px;
+  background: rgba(3, 28, 107, 0.71);
+  color: white;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center;
+  &.pending {}
+  &.loading {}
+  &.found {
+    position: relative;
+    background-image: url('../img/icons/play_overlay.png');
+    background-repeat: no-repeat;
+    .play-preview {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .play-overlay {
+      position: absolute;
+      background: url('../img/icons/play_overlay.png');
+      background-color: rgba(105, 103, 89, 0.29);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30%;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &.not_found {}
+  &.playing {}
+}

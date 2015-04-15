@@ -1,7 +1,6 @@
-ang.controller('GameCtrl', ['$scope',
+app.ang.controller('GameCtrl', ['$scope',
     function($scope) {
 
-        
 
     }
 ]);

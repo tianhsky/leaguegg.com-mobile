@@ -29887,9 +29887,12 @@ var ngIfDirective = ['$animate', function($animate) {
             }
             if (block) {
               previousElements = getBlockNodes(block.clone);
-              $animate.leave(previousElements).then(function() {
-                previousElements = null;
-              });
+              var leave = $animate.leave(previousElements);
+              if(leave){
+                leave.then(function() {
+                  previousElements = null;
+                });
+              }
               block = null;
             }
           }
@@ -30808,7 +30811,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
   this.$setTouched = function() {
     ctrl.$touched = true;
     ctrl.$untouched = false;
-    $animate.setClass($element, TOUCHED_CLASS, UNTOUCHED_CLASS);
+    if ($animate.setClass) $animate.setClass($element, TOUCHED_CLASS, UNTOUCHED_CLASS);
   };
 
   /**
@@ -53628,7 +53631,8 @@ function($compile, $ionicConfig, $ionicBind, $ionicViewSwitcher) {
             // is being destroyed, causing unnecessary view loads and transitions
             tabsCtrl.remove($scope);
           }
-          tabNavElement.isolateScope().$destroy();
+          var is = tabNavElement.isolateScope();
+          if(is) is.$destroy();
           tabNavElement.remove();
           tabNavElement = tabContentEle = childElement = null;
         });

@@ -1,81 +1,17 @@
 <ion-header-bar align-title="center" class="bar-dark">
-<div class="buttons">
-	<button class="button" ng-click="back()"><i class="ion-arrow-left-c"></i> Back</button>
-</div>
-<h1 class="title">{{current_game.game_mode}}</h1>
+  <button class="button icon ion-arrow-left-c" ng-click="goBack()"></button>
+  <h1 class="title">{{title | characters: 20}}</h1>
+  <button class="button icon ion-help-circled" ng-click="showHelp()"></button>
 </ion-header-bar>
-<ion-tabs class="tabs-striped tabs-background-dark tabs-color-assertive tabs-icon-top">
-<ion-tab title="Purple Team" class="purple-tab" icon-on="ion-flag" icon-off="ion-flag">
-<ion-content class="has-header">
-<div class="list">
-	<div class="item item-divider purple-bg">
-		Purple Team
-	</div>
-	<a class="item champion-item" ng-repeat="s in current_game.team_purple">
-		<div class="row champion-row purple">
-			<div class="col col-25">
-				<div class="float-left">
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="38" height="41">
-				</div>
-				<div class="float-right">
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="18" height="18">
-					<br>
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="18" height="18">
-				</div>
-			</div>
-			<div class="col">
-				<div class="float-left">
-					<div>{{s.summoner_name}}</div>
-					<div>{{s.champion_name}}</div>
-				</div>
-				<div class="float-right">
-					<div>{{s.kill_count}} / {{s.death_count}} / {{s.assist_count}}</div>
-					<div>{{s.win_rate}}</div>
-				</div>
-			</div>
-		</div>
-	</a>
-</div>
-</ion-content>
-</ion-tab>
-<ion-tab title="Blue Team" class="blue-tab" icon-on="ion-flag" icon-off="ion-flag">
-<ion-content class="has-header">
-<div class="list">
-	<div class="item item-divider blue-bg">
-		Blue Team
-	</div>
-	<a class="item champion-item" ng-repeat="s in current_game.team_blue">
-		<div class="row champion-row blue">
-			<div class="col col-25">
-				<div class="float-left">
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="38" height="41">
-				</div>
-				<div class="float-right">
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="18" height="18">
-					<br>
-					<img src="http://ionicframework.com/img/docs/siamese-dream.jpg" width="18" height="18">
-				</div>
-			</div>
-			<div class="col">
-				<div class="float-left">
-					<div>{{s.summoner_name}}</div>
-					<div>{{s.champion_name}}</div>
-				</div>
-				<div class="float-right">
-					<div>{{s.kill_count}} / {{s.death_count}} / {{s.assist_count}}</div>
-					<div>{{s.win_rate}}</div>
-				</div>
-			</div>
-		</div>
-	</a>
-</div>
-</ion-content>
-</ion-tab>
-</ion-tab>
-<ion-tab title="Tools" class="tools-tab" icon-on="ion-wrench" icon-off="ion-wrench">
-<ion-content class="has-header">
-</ion-content>
-</ion-tab>
+<ion-tabs class="tabs-striped tabs-background-dark tabs-color-royal tabs-icon-only">
+  <ion-tab icon-on="ion-flag team-tab blue on" icon-off="ion-flag team-tab blue off">
+    <ion-content class="has-header team-content blue">
+      <team-view team="game.teams[0]" select-player="selectPlayer(player)"></team-view>
+    </ion-content>
+  </ion-tab>
+  <ion-tab icon-on="ion-flag team-tab red on" icon-off="ion-flag team-tab red off">
+    <ion-content class="has-header team-content red">
+      <team-view team="game.teams[1]" select-player="selectPlayer(player)"></team-view>
+    </ion-content>
+  </ion-tab>
 </ion-tabs>
-
-<div ui-view="ads"></div>

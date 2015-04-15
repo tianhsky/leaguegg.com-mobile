@@ -9,47 +9,58 @@
 
 		<!-- styles -->
 		<link href="lib/bower_components/normalize.css/normalize.css" rel="stylesheet">
+		<link href="lib/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
 		<link href="lib/effects/css/input_effects.css" rel="stylesheet">
 		<link href="lib/effects/css/btn_effects.css" rel="stylesheet">
 		<link href="css/app.css" rel="stylesheet">
 
-		<!-- util libs -->
-		<script src="lib/bower_components/underscore/underscore-min.js"></script>
-
-		<!-- effects -->
-		<script src="lib/effects/js/modernizr.js"></script>
-		<script src="lib/effects/js/classie.js"></script>
-		<script src="lib/effects/js/btn_effects.js"></script>
-
-		<!-- ionic angular libs -->
-		<script src="lib/ionic/js/ionic.bundle.min.js"></script>
-		
-		<!-- coredova libs -->
+		<!-- cordova -->
 		<script src="cordova.js"></script>
 
-		<!-- angular plugins -->
+		<!-- angular and libs -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
 		<script src="lib/bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="lib/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<script src="lib/bower_components/angular-truncate/src/truncate.js"></script>
 		<script src="lib/bower_components/angular-moment/angular-moment.min.js"></script>
 
-		<!-- app helpers -->
-		<script src="js/helpers/net.js"></script>
+		<!-- core and utils -->
+		<script src="lib/effects/js/modernizr.js"></script>
+		<script src="lib/bower_components/underscore/underscore-min.js"></script>
+		<script src="lib/d3-charts/js/d3.v3.min.js"></script>
+		<script src="lib/jquery/jquery-2.1.3.min.js"></script>
 
-		<!-- app models -->
-		<script src="js/models/service.js"></script>
-
-		<!-- register back btn and ads -->
+		<!-- app config init -->
+		<script src="js/config.js"></script>
 		<script src="js/init.js"></script>
 
+		<!-- app helpers -->
+		<script src="js/helpers/store.js"></script>
+		<script src="js/helpers/http.js"></script>
+
+		<!-- app consts -->
+		<script src="js/models/consts/champion.js"></script>
+		<script src="js/models/consts/spell.js"></script>
+
+		<!-- app models -->
+		<script src="js/models/game.js"></script>
+		<script src="js/models/player.js"></script>
+		<script src="js/models/champion.js"></script>
+		<script src="js/models/spell.js"></script>
+
 		<!-- ng-app libs -->
-		<script src="js/ng-app/app.js"></script>
+		<script src="js/ng-app/ang.js"></script>
+		<script src="js/ng-app/filters/filters.js"></script>
+		<script src="js/ng-app/directives/ngBarChartHorizontal.js"></script>
 		<script src="js/ng-app/directives/ngEnter.js"></script>
+		<script src="js/ng-app/directives/teamView.js"></script>
+		<script src="js/ng-app/controllers/header.js"></script>
 		<script src="js/ng-app/controllers/ads.js"></script>
 		<script src="js/ng-app/controllers/game.js"></script>
 		<script src="js/ng-app/controllers/game.search.js"></script>
 		<script src="js/ng-app/controllers/game.show.js"></script>
+		<script src="js/ng-app/controllers/game.player.show.js"></script>
 	</head>
 	<body ng-app="lolbox">
 		<div ui-view>

@@ -1,0 +1,100 @@
+<div class="list has-top-nav-bar">
+  <div class="item item-divider team-banner {{team.css}}">
+    <span class="float-left team-title">
+      <i class="ion-flag"></i> {{team.name}}
+    </span>
+    <span ng-if="team.banned_champions" class="float-right banned_champions">
+      <span ng-if="team.banned_champions.length>0">Banned</span>
+    <span ng-repeat="c in team.banned_champions">
+        <img ng-src="{{c.img_url}}" width="25">
+      </span>
+    </span>
+  </div>
+  <a class="item champion-item {{team.css}}" ng-repeat="s in team.participants track by $index" ng-click="selectPlayer({player:s})">
+    <div class="row champion-title {{team.css}}">
+      <div class="col">
+        <span class="float-left summoner-name">{{s.summoner.name}}</span>
+        <span class="float-right kda label">Recent<br>KDA</span>
+        <span class="float-right kda">
+          <span class="k">{{s.ranked_stat_recent.avg_kills | number: 1 | nullcheck}}</span>
+        <span ng-if="s.diff.avg_kills>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+        <span ng-if="s.diff.avg_kills<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
+        <span class="d">{{s.ranked_stat_recent.avg_deaths | number: 1 | nullcheck}}</span>
+        <span ng-if="s.diff.avg_deaths>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+        <span ng-if="s.diff.avg_deaths<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
+        <span class="a">{{s.ranked_stat_recent.avg_assists | number: 1 | nullcheck}}</span>
+        <span ng-if="s.diff.avg_assists>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+        <span ng-if="s.diff.avg_assists<0" class="diff dec"><i class="fa fa-arrow-down"></i></span>
+        </span>
+      </div>
+    </div>
+    <div class="row champion-row">
+      <div class="col col-25">
+        <div>
+          <img ng-src="{{s.champion.img_url}}" width="59">
+        </div>
+        <div>
+          <img ng-src="{{s.spell1.img_url}}" width="27">
+          <img ng-src="{{s.spell2.img_url}}" width="27">
+        </div>
+        <div class="champion-plays">
+          {{s.champion.name | characters: 5}} ({{s.ranked_stat_overall.games || 0}})
+        </div>
+        <div class="stream-status" ng-if="s.twitch_stream">
+          <i class="ion-videocamera"></i> LIVE
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <ng-bar-chart-horizontal data="s.charts"></ng-bar-chart-horizontal>
+        </div>
+        <div class="row player-stats-row">
+          <div class="col">
+            <div class="label">
+              10 Min
+              <br> Total
+              <br> CS
+            </div>
+            <hr>
+            <div class="data">
+              {{s.ranked_stat_recent.avg_cs_at_10m | number: 0 | nullcheck}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="label">
+              10 Min
+              <br> DmgTaken
+              <br> Per Min
+            </div>
+            <hr>
+            <div class="data">
+              {{s.ranked_stat_recent.avg_per_min_dmg_taken_at_10m | number: 0 | nullcheck}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="label">
+              Total
+              <br> Wards
+              <br> Placed
+            </div>
+            <hr>
+            <div class="data">
+              {{s.ranked_stat_recent.avg_wards_placed | number: 0 | nullcheck}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="label">
+              Jungle
+              <br> vs.
+              <br> Steal
+            </div>
+            <hr>
+            <div class="data">
+              {{s.ranked_stat_recent.avg_team_jungle_kills | number: 0 | nullcheck}}/{{s.ranked_stat_recent.avg_enemy_jungle_kills | number: 0 | nullcheck}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

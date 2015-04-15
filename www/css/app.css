@@ -1,48 +1,205 @@
-.float-left{
-	float: left;
-}
-.float-right{
-	float: right;
-}
+.float-left {
+  float: left; }
 
-.player-search-bar{
-	margin: 0px !important;
-}
-.region-item .item-content{
-	padding-right: 10px !important;
-}
+.float-right {
+  float: right; }
 
+.has-top-nav-bar {
+  top: 43px; }
 
-.purple-bg{
-	background-color: #FE2EF7;
-	color: white;
-	font-weight: bold;
-}
-.blue-bg{
-	background-color: #58D3F7;
-	color: white;
-	font-weight: bold;
-}
+.game-search-content {
+  padding-top: 40px;
+  background-image: url("../img/loading/Vladimir_3.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat; }
+  .game-search-content .form-item {
+    background-color: rgba(23, 27, 29, 0.51);
+    color: white;
+    border: none; }
+  .game-search-content .search-bar {
+    margin: 0px !important;
+    background: transparent; }
+    .game-search-content .search-bar label {
+      background: transparent; }
+    .game-search-content .search-bar input {
+      color: white; }
+    .game-search-content .search-bar .button-search {
+      background: rgba(43, 145, 112, 0.5);
+      color: #89bccf;
+      font-size: 20px;
+      border-radius: 10px;
+      border-color: transparent; }
+      .game-search-content .search-bar .button-search.activated {
+        background: rgba(99, 182, 155, 0.76) !important; }
+  .game-search-content .region-bar .region-item {
+    background: transparent;
+    color: white; }
+    .game-search-content .region-bar .region-item .item-content {
+      background: transparent;
+      padding-right: 10px !important; }
 
-.purple-tab{
-	color: #FE2EF7 !important;
-	font-weight: bold;
-}
-.blue-tab{
-	color: #58D3F7 !important;
-	font-weight: bold;
-}
-.tools-tab{
-	font-weight: bold;
-}
+.team-content {
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat; }
+  .team-content.blue {
+    background-image: url("../img/loading/Sivir_5.jpg"); }
+  .team-content.red {
+    background-image: url("../img/loading/Morgana_4.jpg"); }
 
-.champion-item{
-	padding: 0px;
-	margin: 0px;
-}
-.champion-row.purple{
-	border-left: 4px solid #FE2EF7;
-}
-.champion-row.blue{
-	border-left: 4px solid #58D3F7;
-}
+.team-banner {
+  color: white;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 2px; }
+  .team-banner.blue {
+    background-color: #3498C3; }
+  .team-banner.red {
+    background-color: #F34747; }
+  .team-banner .team-title {
+    margin-top: 3px; }
+  .team-banner .banned_champions {
+    font-size: 8pt; }
+
+.team-tab.red.on {
+  color: #FC6060 !important; }
+.team-tab.red.off {
+  color: #F34747 !important; }
+.team-tab.blue.on {
+  color: #6CCDF6 !important; }
+.team-tab.blue.off {
+  color: #3498C3 !important; }
+.team-tab.all.on {
+  color: #F79D59 !important; }
+.team-tab.all.off {
+  color: #E38034 !important; }
+
+.champion-item {
+  padding: 0px !important;
+  margin: 10px !important; }
+  .champion-item.blue {
+    background-color: rgba(76, 101, 117, 0.8); }
+  .champion-item.red {
+    background-color: rgba(143, 45, 55, 0.8); }
+  .champion-item .champion-title .col {
+    padding: 0px !important; }
+  .champion-item .champion-title .summoner-name {
+    font-size: 12pt;
+    font-weight: bold;
+    color: white; }
+  .champion-item .champion-title .kda {
+    font-size: 9pt;
+    font-style: italic;
+    color: #7eeeee; }
+    .champion-item .champion-title .kda.label {
+      font-size: 5pt;
+      font-style: normal;
+      text-align: center;
+      line-height: 8px;
+      margin-left: 5px;
+      margin-right: 3px; }
+    .champion-item .champion-title .kda .k {
+      color: #29d829; }
+    .champion-item .champion-title .kda .d {
+      color: #f68a8a; }
+    .champion-item .champion-title .kda .a {
+      color: #f3f32d; }
+    .champion-item .champion-title .kda .diff {
+      font-weight: bold; }
+      .champion-item .champion-title .kda .diff.inc {
+        color: #2fd62f; }
+      .champion-item .champion-title .kda .diff.dec {
+        color: #C96831; }
+  .champion-item .champion-row .champion-plays {
+    color: yellow;
+    font-size: 9pt; }
+  .champion-item .champion-row .stream-status {
+    color: rgba(35, 202, 129, 0.96);
+    font-size: 10pt;
+    font-weight: bold; }
+  .champion-item .champion-row .player-stats-row {
+    color: yellow; }
+    .champion-item .champion-row .player-stats-row .label {
+      font-size: 7pt;
+      font-style: italic;
+      text-align: center;
+      line-height: 10px; }
+    .champion-item .champion-row .player-stats-row .data {
+      font-size: 9pt;
+      font-style: normal;
+      text-align: center; }
+
+.player-chart rect {
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  stroke-opacity: 0.2; }
+  .player-chart rect.offense {
+    fill: #1DB2C7; }
+  .player-chart rect.defense {
+    fill: #2BC4E3; }
+  .player-chart rect.cs {
+    fill: #91A529; }
+  .player-chart rect.win {
+    fill: #0E8013; }
+.player-chart text {
+  fill: yellow;
+  font-weight: bold;
+  font: 10px sans-serif; }
+  .player-chart text.rate {
+    font-style: italic; }
+  .player-chart text.diff {
+    font-family: "FontAwesome";
+    font-weight: bold; }
+    .player-chart text.diff.inc {
+      fill: #2fd62f; }
+    .player-chart text.diff.dec {
+      fill: #C96831; }
+  .player-chart text.description {
+    font-style: italic; }
+
+.player-stat-content {
+  background-image: url("../img/loading/Poppy_2.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: repeat; }
+  .player-stat-content .item {
+    background-color: rgba(13, 62, 85, 0.51);
+    color: white;
+    font-size: 9pt;
+    border: none; }
+  .player-stat-content .player-stat-row .label {
+    font-size: 8pt;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 15px; }
+  .player-stat-content .player-stat-row .data {
+    line-height: 15px; }
+
+.twitchtv-player {
+  width: 100%;
+  height: 230px;
+  background: rgba(3, 28, 107, 0.71);
+  color: white;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center; }
+  .twitchtv-player.found {
+    background-image: url("../img/icons/play_overlay.png");
+    background-repeat: no-repeat; }
+    .twitchtv-player.found .play-preview {
+      width: 100%;
+      height: 100%; }
+    .twitchtv-player.found .play-overlay {
+      background: url("../img/icons/play_overlay.png");
+      background-color: rgba(105, 103, 89, 0.29);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%; }
+
+/*# sourceMappingURL=app.css.map */
