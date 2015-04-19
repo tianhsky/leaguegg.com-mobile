@@ -12,6 +12,6 @@ app.models.champion.findById = function(championId) {
     return {};
   }
   var champ = champs[champKey];
-  champ.img_url = "img/champion/" + champ.key + ".png";
+  champ.img_url = "img/riot/champion/" + champ.key + ".png";
   return champ;
 };

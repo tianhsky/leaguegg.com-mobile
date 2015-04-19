@@ -26,7 +26,18 @@ LoLCaf, aka. League of Legend Caffeine. Provides live game search, player stats 
     cordova run ios --device
 
 ## Todo
-  - rune show
-  - more video feeds
-  - play store assets
+  - help aggressive?
+  - Build option
   - website
+  - Landing page show free champs weekly
+  - play store assets
+  - more video feeds
+  - Match optomize
+
+  Header include deviceid, type, version
+  Request with api version
+  Help page
+  Mobile screenshot
+
+
+  

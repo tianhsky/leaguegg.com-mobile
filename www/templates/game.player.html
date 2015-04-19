@@ -1,0 +1,105 @@
+<ion-header-bar align-title="center" class="bar-dark">
+  <button class="button icon ion-chevron-left" ng-click="goBack()"></button>
+  <h1 class="title">{{title | characters: 15}}</h1>
+</ion-header-bar>
+<ion-content has-header="true" class="player-stat-content">
+  <div class="list">
+    <div class="item item-divider title-row">
+      <i class="ion-ios-book"></i> Runes
+    </div>
+    <div class="item">
+      <div class="row rune-row" ng-repeat="r in player.runes">
+        <div class="col-25">
+          <b>{{r.count}}x </b>
+          <img ng-src="{{r.img_url}}" />
+        </div>
+        <div class="col">{{r.description}}</div>
+      </div>
+    </div>
+    <div class="item item-divider title-row">
+      <i class="ion-pie-graph"></i> Stats
+    </div>
+    <div class="item">
+      <div class="row player-stat-row">
+        <div class="col label">Summoner</div>
+        <div class="col data">{{player.summoner.name}}</div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">Champion</div>
+        <div class="col data">{{player.champion.name}}</div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">
+          Season won/lost
+          <br> Recent won/lost
+        </div>
+        <div class="col data">
+          {{player.ranked_stat_overall.won | nullcheck}} / {{player.ranked_stat_overall.lost | nullcheck}}
+          <br> {{player.ranked_stat_recent.won | nullcheck}} / {{player.ranked_stat_recent.lost | nullcheck}}
+        </div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">
+          Season KDA
+          <br> Recent KDA
+        </div>
+        <div class="col data">
+          <div class="kda">
+            <span class="k">{{player.ranked_stat_overall.avg_kills | number: 1 | nullcheck}}</span> /
+            <span class="d">{{player.ranked_stat_overall.avg_deaths | number: 1 | nullcheck}}</span> /
+            <span class="a">{{player.ranked_stat_overall.avg_assists | number: 1 | nullcheck}}</span>
+            <span class="rate" ng-if="player.ranked_stat_overall.kda_rate!=null">({{player.ranked_stat_overall.kda_rate | number: 1 | nullcheck}})</span>
+          </div>
+          <div class="kda">
+            <span class="k">{{player.ranked_stat_recent.avg_kills | number: 1 | nullcheck}}</span> /
+            <span class="d">{{player.ranked_stat_recent.avg_deaths | number: 1 | nullcheck}}</span> /
+            <span class="a">{{player.ranked_stat_recent.avg_assists | number: 1 | nullcheck}}</span>
+            <span class="rate" ng-if="player.ranked_stat_recent.kda_rate!=null">({{player.ranked_stat_recent.kda_rate | number: 1 | nullcheck}})</span>
+          </div>
+        </div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">
+          Season minion kills
+          <br> Recent minion kills
+        </div>
+        <div class="col data">
+          {{player.ranked_stat_overall.avg_minion_kills | number: 0 | nullcheck}}
+          <br> {{player.ranked_stat_recent.avg_minion_kills | number: 0 | nullcheck}}
+        </div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">
+          Minion kills team jungle
+          <br> Minion kills enemy jungle
+        </div>
+        <div class="col data">
+          {{player.ranked_stat_recent.avg_team_jungle_kills | number: 0 | nullcheck}}
+          <br> {{player.ranked_stat_recent.avg_enemy_jungle_kills | number: 0 | nullcheck}}
+        </div>
+      </div>
+      <div class="row player-stat-row">
+        <div class="col label">
+          Sight wards bought
+          <br> Wards placed / killed
+        </div>
+        <div class="col data">
+          {{player.ranked_stat_recent.avg_sight_wards_bought | number: 0 | nullcheck}}
+          <br> {{player.ranked_stat_recent.avg_wards_placed | number: 0 | nullcheck}} / {{player.ranked_stat_recent.avg_wards_killed | number: 0 | nullcheck}}
+        </div>
+      </div>
+    </div>
+    <div class="item item-divider title-row">
+      <i class="ion-videocamera"></i> Live Stream
+    </div>
+    <div class="item">
+      <div class="twitchtv-player {{stream.status}}" ng-if="stream.status!='playing'">
+        <img class="play-preview" ng-src="{{stream.preview.medium}}" ng-if="stream.status=='found'"></img>
+        <div class="play-overlay" ng-if="stream.status=='found'" ng-click="play()"></div>
+      </div>
+      <div class="twitchtv-player {{stream.status}}" ng-if="stream.status=='playing'">
+        <iframe type="text/html" width="100%" height="100%" ng-src="{{stream.url}}" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</ion-content>

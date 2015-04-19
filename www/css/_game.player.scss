@@ -1,0 +1,77 @@
+.player-stat-content {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/bgs/stats-bg.png");
+  .item {
+    background-color: rgba(13, 62, 85, 0.51);
+    color: white;
+    font-size: 9pt;
+    border: none;
+    white-space: normal;
+  }
+  .title-row {
+    font-size: 13pt;
+    color: rgb(15, 209, 155);
+  }
+  .rune-row {
+    img {
+      width: 19px;
+    }
+  }
+  .player-stat-row {
+    .label {
+      font-size: 8pt;
+      font-weight: bold;
+      line-height: 15px;
+    }
+    .data {
+      font-style: italic;
+      line-height: 15px;
+      .kda {
+        .rate {
+          font-size: 11pt;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .twitchtv-player {
+    background-color: rgba(3, 28, 107, 0.71);
+    background-repeat: no-repeat;
+    width: 88%;
+    height: 220px;
+    margin: auto;
+    &.pending {}
+    &.loading {}
+    &.playing {}
+    &.found {
+      position: relative;
+      .play-preview {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .play-overlay {
+        position: absolute;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // background-color: rgba(105, 103, 89, 0.29);
+        background-image: url('../img/icons/play_overlay.png');
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin: -40px auto auto -40px;
+      }
+    }
+    &.not_found {
+      background-image: url("../img/icons/stream_unavailable.jpg");
+      background-size: 150%;
+      opacity: 0.8;
+      color: black;
+      padding: 10px;
+      font-size: 14pt;
+    }
+  }
+}

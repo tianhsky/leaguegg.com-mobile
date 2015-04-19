@@ -28,7 +28,7 @@ app.tstore = app.tstore || {};
 app._tstore = app._tstore || {};
 app.tstore.set = function(key, val) {
   app._tstore[key] = val;
-  app._tstore;
+  return true;
 }
 app.tstore.get = function(key) {
   return app._tstore[key];

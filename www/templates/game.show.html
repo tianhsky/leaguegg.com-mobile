@@ -1,17 +1,19 @@
 <ion-header-bar align-title="center" class="bar-dark">
-  <button class="button icon ion-arrow-left-c" ng-click="goBack()"></button>
+  <!-- <img src="img/icons/ic_launcher.png" ng-click="goBack()"> -->
+  <button class="button btn-logo-innerblue" ng-click="goBack()">
+  </button>
   <h1 class="title">{{title | characters: 20}}</h1>
-  <button class="button icon ion-help-circled" ng-click="showHelp()"></button>
+  <!-- <button class="button icon ion-help-circled" ng-click="showHelp()"></button> -->
 </ion-header-bar>
 <ion-tabs class="tabs-striped tabs-background-dark tabs-color-royal tabs-icon-only">
   <ion-tab icon-on="ion-flag team-tab blue on" icon-off="ion-flag team-tab blue off">
-    <ion-content class="has-header team-content blue">
-      <team-view team="game.teams[0]" select-player="selectPlayer(player)"></team-view>
+    <ion-content has-header="true" class="team-content blue">
+      <game-team team="game.teams[0]" select-player="selectPlayer(player)"></game-team>
     </ion-content>
   </ion-tab>
   <ion-tab icon-on="ion-flag team-tab red on" icon-off="ion-flag team-tab red off">
-    <ion-content class="has-header team-content red">
-      <team-view team="game.teams[1]" select-player="selectPlayer(player)"></team-view>
+    <ion-content has-header="true" class="team-content red">
+      <game-team team="game.teams[1]" select-player="selectPlayer(player)"></game-team>
     </ion-content>
   </ion-tab>
 </ion-tabs>

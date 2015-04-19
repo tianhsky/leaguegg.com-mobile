@@ -4,12 +4,12 @@ app.ang.controller('GameShowCtrl', ['$scope',
 
     // scope vars
     $scope.title = null;
-    $scope.error_message = null;
     $scope.game = null;
     var gameObj = null;
     var searchParams = app.store.get('game.search');
 
     loadGame();
+    track();
 
     // functions
     $scope.goBack = function() {
@@ -26,24 +26,34 @@ app.ang.controller('GameShowCtrl', ['$scope',
     }
 
     $scope.$on("$destroy", function() {
-      delete gameObj;
+      gameObj = null;
     });
 
     function loadGame() {
       var g = app.tstore.get('game.current');
       gameObj = new app.models.game();
-      gameObj.init(g);
+      var updated = gameObj.init(g);
       $scope.game = gameObj.getData();
       if (!$scope.game) $scope.goBack();
       $scope.title = $scope.game.game_queue.name;
-      loadTwitchStatus();
+      if (updated) loadTwitchStatus();
+    }
+
+    function track() {
+      app.ga.sendAppViewWithParams('GameShow', {
+        gameId: $scope.game.id,
+        summonerName: searchParams.summonerName,
+        region: searchParams.region
+      });
     }
 
     function loadTwitchStatus() {
       _.each($scope.game.teams, function(team) {
         _.each(team.participants, function(p) {
+          if (!p.meta) p.meta = {};
+          var name = p.meta.twitch_channel || p.summoner.name;
           app.models.player.findTwithStream(
-            p.summoner.name,
+            name,
             function(stream) {
               if (stream) {
                 $scope.$apply(function() {

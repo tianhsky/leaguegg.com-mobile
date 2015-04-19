@@ -70,7 +70,7 @@
                     "SystemConfiguration.framework": [
                         {
                             "xml": false,
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "UIKit.framework": [
@@ -78,7 +78,26 @@
                             "xml": false,
                             "count": 1
                         }
-                    ]
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.0.dylib": []
                 }
             },
             "config.xml": {
@@ -90,6 +109,18 @@
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GoogleAnalytics\"><param name=\"ios-package\" value=\"GoogleAnalyticsPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Market\"><param name=\"ios-package\" value=\"CDVMarket\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -105,6 +136,15 @@
             "PACKAGE_NAME": "com.ty.lolbox"
         },
         "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.ty.lolbox"
+        },
+        "com.cmackay.plugins.googleanalytics": {
+            "PACKAGE_NAME": "com.ty.lolbox"
+        },
+        "uk.co.whiteoctober.cordova.appversion": {
+            "PACKAGE_NAME": "com.ty.lolbox"
+        },
+        "com.xmartlabs.cordova.market": {
             "PACKAGE_NAME": "com.ty.lolbox"
         }
     },

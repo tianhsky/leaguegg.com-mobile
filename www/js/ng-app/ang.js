@@ -15,19 +15,11 @@ app.ang = angular.module('lolbox', [
       })
       .state('game.search', {
         url: '/game/search',
-        data: {
-          title: 'Search Game',
-          showBack: false
-        },
         views: {
           '': {
             templateUrl: 'templates/game.search.html',
             controller: 'GameSearchCtrl'
           }
-          // 'header@game.search': {
-          //   templateUrl: 'templates/header.html',
-          //   controller: 'HeaderCtrl'
-          // }
         }
       })
       .state('game.show', {
@@ -43,8 +35,8 @@ app.ang = angular.module('lolbox', [
         url: '/game/player/show?region&summoner_name',
         views: {
           '': {
-            templateUrl: 'templates/game.player.show.html',
-            controller: 'GamePlayerShowCtrl',
+            templateUrl: 'templates/game.player.html',
+            controller: 'GamePlayerCtrl',
           }
         }
       });

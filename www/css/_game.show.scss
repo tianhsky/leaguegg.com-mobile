@@ -1,0 +1,179 @@
+.team-content {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  &.blue {
+    background-image: url("../img/bgs/blueteam-bg.png");
+  }
+  &.red {
+    background-image: url("../img/bgs/readteam-bg.png");
+  }
+  .team-banner {
+    color: white;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    border: none;
+    &.blue {
+      background-color: $dark-blue;
+    }
+    &.red {
+      background-color: $dark-red;
+    }
+    .team-title {
+      margin-top: 3px;
+    }
+    .banned_champions {
+      font-size: 8pt;
+    }
+  }
+  .champion-item {
+    padding: 0px !important;
+    margin: 10px !important;
+    border: none;
+    border-radius: 5px;
+    &.activated {
+      opacity: 0.7;
+    }
+    &.blue {
+      background-color: $trans-blue;
+    }
+    &.red {
+      background-color: $trans-red;
+    }
+    .champion-title {
+      .col {
+        padding: 0px !important;
+      }
+      .summoner-name {
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+      }
+      .kda {
+        font-size: 9pt;
+        font-style: italic;
+        color: rgb(126, 238, 238);
+        &.label {
+          font-size: 5pt;
+          font-style: normal;
+          text-align: center;
+          line-height: 8px;
+          margin-left: 5px;
+          margin-right: 3px;
+        }
+        .k {
+          color: $kill;
+        }
+        .d {
+          color: $death;
+        }
+        .a {
+          color: $assist;
+        }
+        .diff {
+          font-weight: bold;
+          &.inc {
+            color: $inc-green;
+          }
+          &.dec {
+            color: $dec-red;
+          }
+        }
+      }
+    }
+    .champion-row {
+      .champion-plays {
+        color: yellow;
+        font-size: 9pt;
+      }
+      .stream-status {
+        color: rgba(35, 202, 129, 0.96);
+        font-size: 10pt;
+        font-weight: bold;
+      }
+      .player-stats-row {
+        color: yellow;
+        .label {
+          font-size: 7pt;
+          font-style: italic;
+          text-align: center;
+          line-height: 10px;
+        }
+        .data {
+          font-size: 9pt;
+          font-style: normal;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .player-chart {
+    rect {
+      stroke: #FFFFFF;
+      stroke-width: 2;
+      stroke-opacity: 0.2;
+      &.offense {
+        fill: $offense;
+      }
+      &.defense {
+        fill: $defense;
+      }
+      &.cs {
+        fill: $cs;
+      }
+      &.win {
+        fill: $win;
+      }
+    }
+    text {
+      fill: yellow;
+      font-weight: bold;
+      font: 10px sans-serif;
+      &.label {}
+      &.rate {
+        font-style: italic;
+      }
+      &.diff {
+        font-family: "FontAwesome";
+        font-weight: bold;
+        &.inc {
+          fill: $inc-green;
+        }
+        &.dec {
+          fill: $dec-red;
+        }
+      }
+      &.description {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.team-tab {
+  &.red {
+    &.on {
+      color: $light-red !important;
+    }
+    &.off {
+      color: $dark-red !important;
+    }
+  }
+  &.blue {
+    &.on {
+      color: $light-blue !important;
+    }
+    &.off {
+      color: $dark-blue !important;
+    }
+  }
+  &.all {
+    &.on {
+      color: $light-orange !important;
+    }
+    &.off {
+      color: $dark-orange !important;
+    }
+  }
+}

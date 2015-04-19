@@ -12,6 +12,6 @@ app.models.spell.findById = function(spellId) {
     return {};
   }
   var spell = spells[spellKey];
-  spell.img_url = "img/spell/" + spell.name + ".png";
+  spell.img_url = "img/riot/spell/" + spell.name + ".png";
   return spell;
 };

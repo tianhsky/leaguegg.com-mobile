@@ -1,0 +1,59 @@
+$hover-blue: rgba(68, 129, 196, 0.18);
+$selected-blue: rgba(68, 129, 196, 0.45);
+
+.game-search-content {
+  padding-top: 40px;
+  background-image: url("../img/bgs/search-bg.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  .item {
+    background-color: $trans-dark-blue;
+    color: white;
+    border: none;
+  }
+  .error-message{
+    color: rgb(187, 82, 56);
+    font-size: 8pt;
+    height: 18px;
+    text-align: right;
+    padding-right: 5px;
+  }
+  .search-bar {
+    margin: 0px !important;
+    background: transparent;
+    label {
+      background: $hover-blue;
+    }
+    input {
+      color: white;
+    }
+    .button-search {
+      background: $selected-blue;
+      color: rgb(137, 188, 207);
+      font-size: 20px;
+      border-radius: 10px;
+      border-color: transparent;
+      &.activated {
+        background: $hover-blue !important;
+      }
+    }
+  }
+  .region-bar {
+    .region-item {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.21);
+      border-radius: 10px;
+      padding: 13px;
+      margin: 0px 8px 13px 8px;
+      text-align: center;
+      &.activated{
+        background: $hover-blue;
+      }
+      &.active {
+        background: $selected-blue;
+      }
+    }
+  }
+}

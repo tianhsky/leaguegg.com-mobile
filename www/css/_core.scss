@@ -1,0 +1,31 @@
+// basic
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.has-header {
+  top: 44px !important;
+}
+
+.bar {
+  .button {
+    border: none;
+  }
+}
+
+.btn-logo-innerblue {
+  background-image: url("../img/icons/logo-innerblue-144x144.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 35px;
+  height: 35px;
+  &:hover .activated {
+    background-color: gold;
+    border-radius: 10px;
+  }
+}

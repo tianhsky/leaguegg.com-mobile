@@ -1,1 +1,4 @@
+echo "compile css..."
 scss www/css/app.scss www/css/app.css
+scss www/css/splash.scss www/css/splash.css
+echo "compile css done"

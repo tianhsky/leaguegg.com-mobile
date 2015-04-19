@@ -1,0 +1,73 @@
+@keyframes f-fadeOut {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes f-fadeOut {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+.fadeOut {
+  animation: f-fadeOut 800ms;
+  -webkit-animation: f-fadeOut 800ms;
+}
+
+.splash-content {
+  background-image: url('../img/bgs/gray-bg.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  .overlay {
+    // background-color: rgb(46, 40, 40);
+  }
+  .logo {
+    width: 70%;
+    padding-top: 60px;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .text {
+    padding: 10px;
+    font-size: 10pt;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  #progress-bar-container {
+    width: 75%;
+    height: 15px;
+    margin: auto;
+  }
+  #progress-text {
+    text-align: center;
+    font-size: 8pt;
+    color: white;
+  }
+  #update-app-btn {
+    text-align: center;
+    margin: 10px;
+    button {
+      border: none;
+      border-color: transparent;
+      border-radius: 10px;
+      outline: none;
+      width: 100px;
+      height: 30px;
+    }
+  }
+}

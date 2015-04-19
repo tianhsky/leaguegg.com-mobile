@@ -8,6 +8,7 @@
         "angular-moment": "latest",
         "normalize.css": "3.0.2",
         "underscore": "1.8.2",
-        "font-awesome": "4.3.0"
+        "font-awesome": "4.3.0",
+        "progressbar.js": "0.8.1"
     }
 }

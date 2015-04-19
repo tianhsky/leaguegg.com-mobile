@@ -3,6 +3,7 @@ app.models = app.models || {};
 app.models.game = function() {
   // class vars
   this.data = null;
+  this.updated = false;
 };
 
 // class methods
@@ -10,18 +11,30 @@ app.models.game.findBySummoner = function(options, success, error) {
   app.helpers.api.get({
     url: 'api/game.json?summoner_name=' + options.summonerName + '&region=' + options.region,
     success: success,
-    error: error
-  })
+    error: function(err) {
+      error(err);
+      var fatal = false;
+      if (err.status == 429) fatal = true;
+      app.ga.sendException(err.status + "", fatal);
+    }
+  });
+  // track ga
+  app.ga.sendEvent('Game', 'SearchBySummoner', options.summonerName + "@" + options.region, 1);
 };
 
 // instance methods
 app.models.game.prototype.init = function(json) {
   this.data = json;
-  // this.aggregateStats();
-  this.ensureTeamInfo();
-  this.ensureImgs();
-  this.genChartData();
-  this.genKDADiff();
+  if (!this.updated) {
+    // this.aggregateStats();
+    this.ensureTeamInfo();
+    this.ensureImgs();
+    this.genChartData();
+    this.genKDADiff();
+    this.updated = true;
+    return true;
+  }
+  return false;
 }
 app.models.game.prototype.getData = function() {
   return this.data;
@@ -86,6 +99,9 @@ app.models.game.prototype.ensureImgs = function() {
       p.champion.img_url = app.models.champion.findById(p.champion.id).img_url;
       p.spell1.img_url = app.models.spell.findById(p.spell1.id).img_url;
       p.spell2.img_url = app.models.spell.findById(p.spell2.id).img_url;
+      _.each(p.runes, function(r) {
+        r.img_url = app.models.rune.findById(r.id).img_url;
+      });
     });
   })
 }

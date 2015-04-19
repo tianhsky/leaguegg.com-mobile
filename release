@@ -1,0 +1,17 @@
+./compile
+
+echo "build android ..."
+cordova build --release android
+echo "build android done"
+
+echo "sign apk ..."
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore keys/com.ty.keystore platforms/android/ant-build/MainActivity-release-unsigned.apk com.ty
+echo "sign apk done"
+
+echo "remove old release apk ..."
+rm -f platforms/android/ant-build/LoLCaf-release.apk
+echo "remove old release apk done"
+
+echo "zipalign apk ..."
+/opt/android-sdk/build-tools/21.1.2/zipalign -v 4 platforms/android/ant-build/MainActivity-release-unsigned.apk platforms/android/ant-build/LoLCaf-release.apk
+echo "zipalign apk done"

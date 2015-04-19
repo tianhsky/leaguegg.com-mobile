@@ -1,8 +1,10 @@
-app.ang.controller('GameSearchCtrl', ['$scope',
-  function($scope) {
-    navigator.app.clearHistory();
+app.ang.controller('GameSearchCtrl', ['$scope', '$ionicLoading',
+  function($scope, $ionicLoading) {
+    if (navigator.app) navigator.app.clearHistory();
 
     var defaultRegion = 'NA';
+    $scope.error = null;
+    $scope.regions = app.consts.region.data;
     $scope.criteria = {
       region: "NA",
       summoner_name: null
@@ -10,21 +12,32 @@ app.ang.controller('GameSearchCtrl', ['$scope',
     loadSearch();
 
     $scope.searchGame = function() {
+      $scope.error = null;
       app.store.set("game.search", $scope.criteria);
 
+      app.models.cheat.applyCode($scope.criteria.summoner_name);
+
+      $scope.loadingIndicator = $ionicLoading.show({
+        content: 'Searching Summoner',
+        animation: 'fade-in',
+        showBackdrop: false,
+        maxWidth: 200,
+        showDelay: 500
+      });
       app.models.game.findBySummoner({
           summonerName: $scope.criteria.summoner_name,
           region: $scope.criteria.region
         }, function(data) {
-          if (data.error) {
-            alert("Error");
-          } else {
-            app.tstore.set("game.current", data);
-            goToGame();
-          }
+          app.tstore.set("game.current", data);
+          $scope.loadingIndicator.hide();
+          goToGame();
         },
         function(err) {
-          alert("Not in game");
+          $scope.loadingIndicator.hide();
+          if (err.status == 0) $scope.error = "Network unavailable";
+          else if (err.status == 429) $scope.error = "Server busy... relax!";
+          else if (err.status == 404) $scope.error = "Not found";
+          else $scope.error = "There was an error";
         }
       );
     }

@@ -10,7 +10,7 @@
                     "/manifest/application": [
                         {
                             "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
@@ -20,11 +20,11 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -33,11 +33,23 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"GoogleAnalytics\"><param name=\"android-package\" value=\"com.cmackay.plugins.googleanalytics.GoogleAnalyticsPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Market\"><param name=\"android-package\" value=\"com.xmartlabs.cordova.market.Market\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppVersion\"><param name=\"android-package\" value=\"uk.co.whiteoctober.cordova.AppVersion\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -46,19 +58,28 @@
         }
     },
     "installed_plugins": {
+        "com.cmackay.plugins.googleanalytics": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
         "com.google.cordova.admob": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
+        "com.xmartlabs.cordova.market": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
+        "uk.co.whiteoctober.cordova.appversion": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
         }
     },
     "dependent_plugins": {
-        "com.rjfun.cordova.extension": {
-            "PACKAGE_NAME": "com.ty.lolbox"
-        },
         "com.google.playservices": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
+        "com.rjfun.cordova.extension": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
         }
     }
 }
