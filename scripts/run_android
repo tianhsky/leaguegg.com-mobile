@@ -1,0 +1,2 @@
+scripts/compile_assets
+cordova run android --device

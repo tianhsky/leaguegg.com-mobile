@@ -1,0 +1,4 @@
+echo "compile css..."
+scss --style compressed --sourcemap=none www/scss/app.scss www/css/app.css
+scss --style compressed --sourcemap=none www/scss/splash.scss www/css/splash.css
+echo "compile css done"

@@ -1,5 +1,5 @@
-platforms
-keys
-node_modules
+/platforms
+/keys
+/node_modules
 .sass-cache
 .DS_Store
