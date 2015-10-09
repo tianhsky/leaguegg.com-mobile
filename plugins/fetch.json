@@ -37,5 +37,12 @@
             "url": "https://github.com/xmartlabs/cordova-plugin-market",
             "subdir": "."
         }
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-splashscreen.git",
+            "subdir": "."
+        }
     }
 }

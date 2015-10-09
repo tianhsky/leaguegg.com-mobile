@@ -1,6 +1,6 @@
 app.ang.controller('GameSearchCtrl', ['$scope', '$ionicLoading',
   function($scope, $ionicLoading) {
-    if (navigator.app) navigator.app.clearHistory();
+    navigator.app && navigator.app.clearHistory();
 
     var defaultRegion = 'NA';
     $scope.error = null;

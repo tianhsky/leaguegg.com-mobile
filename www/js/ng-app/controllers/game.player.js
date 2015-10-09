@@ -1,6 +1,6 @@
 app.ang.controller('GamePlayerCtrl', ['$scope', '$sce',
   function($scope, $sce) {
-    navigator.app.clearHistory();
+    navigator.app && navigator.app.clearHistory();
 
     // vars
     $scope.player = app.tstore.get('game.player.selected');

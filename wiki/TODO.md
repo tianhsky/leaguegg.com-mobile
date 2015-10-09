@@ -1,5 +1,7 @@
 ## Todo
 
+  - i18n support
+  - ios version
   - help for aggressive rate
   - reduce img size increase page load speed
   - js optmize for performance

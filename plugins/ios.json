@@ -7,6 +7,30 @@
         "files": {
             "framework": {
                 "parents": {
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
                     "AdSupport.framework": [
                         {
                             "xml": false,
@@ -67,44 +91,27 @@
                             "count": 1
                         }
                     ],
-                    "SystemConfiguration.framework": [
-                        {
-                            "xml": false,
-                            "count": 2
-                        }
-                    ],
                     "UIKit.framework": [
                         {
                             "xml": false,
                             "count": 1
                         }
-                    ],
-                    "CoreData.framework": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
-                    "libsqlite3.dylib": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
-                    "libz.dylib": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
-                    "libsqlite3.0.dylib": []
+                    ]
                 }
             },
             "config.xml": {
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"GoogleAnalytics\"><param name=\"ios-package\" value=\"GoogleAnalyticsPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"CDVAdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Market\"><param name=\"ios-package\" value=\"CDVMarket\" /></feature>",
                             "count": 1
                         },
                         {
@@ -112,15 +119,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"GoogleAnalytics\"><param name=\"ios-package\" value=\"GoogleAnalyticsPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Market\"><param name=\"ios-package\" value=\"CDVMarket\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -129,28 +128,28 @@
         }
     },
     "installed_plugins": {
-        "com.google.cordova.admob": {
-            "PACKAGE_NAME": "com.ty.lolbox"
-        },
-        "com.google.playservices": {
-            "PACKAGE_NAME": "com.ty.lolbox"
-        },
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ty.lolbox"
-        },
         "com.cmackay.plugins.googleanalytics": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
         },
-        "uk.co.whiteoctober.cordova.appversion": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+        "com.google.cordova.admob": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
         },
         "com.xmartlabs.cordova.market": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
+        "uk.co.whiteoctober.cordova.appversion": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
         }
     },
     "dependent_plugins": {
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.ty.lolcaf"
+        },
         "com.rjfun.cordova.extension": {
-            "PACKAGE_NAME": "com.ty.lolbox"
+            "PACKAGE_NAME": "com.ty.lolcaf"
         }
     }
 }

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<widget id="com.ty.lolcaf" version="0.9.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>LoLCaf</name>
+<widget id="com.ty.lolcaf" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>LeagueGG</name>
   <description>
     League of Legends live status, analysis, live stream.
   </description>
-  <author email="lolcaffeine@gmail.com" href="http://www.lolcaf.com">
-    LoLCaf
+  <author email="lolcaffeine@gmail.com" href="http://www.leaguegg.com">
+    LeagueGG
   </author>
   <content src="splash.html" />
   <access origin="*" />
   <icon src="icons/icon_128x128.png" />
   <preference name="orientation" value="portrait" />
+  <preference name="android-minSdkVersion" value="16" />
 </widget>

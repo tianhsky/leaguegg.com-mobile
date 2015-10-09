@@ -1,6 +1,6 @@
 app.ang.controller('GameShowCtrl', ['$scope',
   function($scope) {
-    navigator.app.clearHistory();
+    navigator.app && navigator.app.clearHistory();
 
     // scope vars
     $scope.title = null;

@@ -84,7 +84,7 @@ app.goToStore = function(device) {
   } else {
 
   }
-  navigator.app.exitApp();
+  navigator.app && navigator.app.exitApp();
 };
 app.checkServer = function() {
   var device = app.device.what();

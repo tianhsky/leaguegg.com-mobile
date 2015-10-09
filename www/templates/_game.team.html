@@ -5,7 +5,7 @@
     </span>
     <span ng-if="team.banned_champions" class="float-right banned_champions">
       <span ng-if="team.banned_champions.length>0">Banned</span>
-    <span ng-repeat="c in team.banned_champions">
+      <span ng-repeat="c in team.banned_champions">
         <img ng-src="{{c.img_url}}" width="25">
       </span>
     </span>
@@ -14,17 +14,18 @@
     <div class="row champion-title {{team.css}}">
       <div class="col">
         <span class="float-left summoner-name">{{s.summoner.name}}</span>
-        <span class="float-right kda label">Recent<br>KDA</span>
+        <span class="float-right kda label">Recent
+          <br>KDA</span>
         <span class="float-right kda">
           <span class="k">{{s.ranked_stat_recent.avg_kills | number: 1 | nullcheck}}</span>
-        <span ng-if="s.diff.avg_kills>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
-        <span ng-if="s.diff.avg_kills<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
-        <span class="d">{{s.ranked_stat_recent.avg_deaths | number: 1 | nullcheck}}</span>
-        <span ng-if="s.diff.avg_deaths>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
-        <span ng-if="s.diff.avg_deaths<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
-        <span class="a">{{s.ranked_stat_recent.avg_assists | number: 1 | nullcheck}}</span>
-        <span ng-if="s.diff.avg_assists>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
-        <span ng-if="s.diff.avg_assists<0" class="diff dec"><i class="fa fa-arrow-down"></i></span>
+          <span ng-if="s.diff.avg_kills>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+          <span ng-if="s.diff.avg_kills<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
+          <span class="d">{{s.ranked_stat_recent.avg_deaths | number: 1 | nullcheck}}</span>
+          <span ng-if="s.diff.avg_deaths>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+          <span ng-if="s.diff.avg_deaths<0" class="diff dec"><i class="fa fa-arrow-down"></i></span> /
+          <span class="a">{{s.ranked_stat_recent.avg_assists | number: 1 | nullcheck}}</span>
+          <span ng-if="s.diff.avg_assists>0" class="diff inc"><i class="fa fa-arrow-up"></i></span>
+          <span ng-if="s.diff.avg_assists<0" class="diff dec"><i class="fa fa-arrow-down"></i></span>
         </span>
       </div>
     </div>

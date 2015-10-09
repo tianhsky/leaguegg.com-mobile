@@ -1,2 +1,2 @@
 scripts/compile_assets
-cordova run ios --device
+cordova run ios --emulator

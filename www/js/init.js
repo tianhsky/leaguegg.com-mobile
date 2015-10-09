@@ -7,6 +7,13 @@
     };
   }
 
+  // for ios development  
+  if (config.enableDebugAlert) {
+    window.onerror = function(errorMsg, url, lineNumber) {
+      alert(errorMsg + "|" + url + "|" + lineNumber);
+    }
+  }
+
   // app
   window.app = window.app || {};
   app.goBack = function(e) {
@@ -14,47 +21,22 @@
     var homePath = '#/game/search';
     var gameShowPath = '#/game/show';
     var gamePlayerShowPath = '#/game/player/show';
+    if (e) e.preventDefault();
     if (currentPath.startsWith(homePath)) {
       throw "Back button clicked";
     } else if (currentPath.startsWith(gameShowPath)) {
       location.hash = homePath;
     } else if (currentPath.startsWith(gamePlayerShowPath)) {
       location.hash = gameShowPath;
+    } else {
+      history.go(-1);
     }
 
-    if (e) e.preventDefault();
-    history.go(-1);
     throw "Back button clicked";
   };
   app.showAds = function() {
     if (app.store.get('disableAds') == true) return;
-    var admobid = {};
-    var device = app.device.what();
-    if (device == "android") {
-      admobid = {
-        banner: 'ca-app-pub-3874400567673116/3922360588', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-xxx/yyy'
-      };
-    } else if (device == "ios") {
-      admobid = {
-        banner: 'ca-app-pub-3874400567673116/3922360588', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-xxx/kkk'
-      };
-    } else {
-      // probably windows phone
-      admobid = {
-        banner: 'ca-app-pub-3874400567673116/3922360588', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-xxx/kkk'
-      };
-    }
-
-    if (AdMob) {
-      AdMob.createBanner({
-        adId: admobid.banner,
-        position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        autoShow: true
-      });
-    }
+    app.ads.setupBottomBanner();
   };
   app.initialize = function() {
     app.bindEvents();
@@ -72,7 +54,7 @@
   };
   app.onDeviceReady = function() {
     app.setupAnalytics();
-    navigator.app.overrideBackbutton(true);
+    navigator.app && navigator.app.overrideBackbutton(true);
     document.addEventListener("backbutton", app.goBack, false);
     if (config.showAds) app.showAds();
   };
