@@ -1,2 +1,11 @@
+echo "cleanning..."
+#cordova platform remove android
+
+echo "building..."
+#cordova platform add android
+
+echo "compile assets..."
 scripts/compile_assets
+
+echo "install on device"
 cordova run android --device

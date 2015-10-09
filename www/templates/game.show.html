@@ -2,7 +2,7 @@
   <!-- <img src="img/icons/ic_launcher.png" ng-click="goBack()"> -->
   <button class="button btn-logo-innerblue" ng-click="goBack()">
   </button>
-  <h1 class="title">{{title | characters: 20}}</h1>
+  <h1 class="title">{{::title | characters: 20}}</h1>
   <!-- <button class="button icon ion-help-circled" ng-click="showHelp()"></button> -->
 </ion-header-bar>
 <ion-tabs class="tabs-striped tabs-background-dark tabs-color-royal tabs-icon-only">

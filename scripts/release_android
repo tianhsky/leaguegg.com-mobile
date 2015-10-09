@@ -1,3 +1,9 @@
+echo "cleanning..."
+cordova platform remove android
+
+echo "building..."
+cordova platform add android
+
 RELEASE_UNSIGNED_APK=platforms/android/ant-build/MainActivity-release-unsigned.apk
 RELEASE_SIGNED_APK=platforms/android/ant-build/LoLCaf-release.apk
 

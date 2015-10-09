@@ -28,7 +28,6 @@ app.models.game.prototype.init = function(json) {
   if (!this.updated) {
     // this.aggregateStats();
     this.ensureTeamInfo();
-    this.ensureImgs();
     this.genChartData();
     this.genKDADiff();
     this.updated = true;
@@ -90,21 +89,7 @@ app.models.game.prototype.aggregateStats = function() {
   });
   return null;
 }
-app.models.game.prototype.ensureImgs = function() {
-  _.each(this.data.teams, function(team) {
-    _.each(team.banned_champions, function(c) {
-      c.img_url = app.models.champion.findById(c.id).img_url;
-    });
-    _.each(team.participants, function(p) {
-      p.champion.img_url = app.models.champion.findById(p.champion.id).img_url;
-      p.spell1.img_url = app.models.spell.findById(p.spell1.id).img_url;
-      p.spell2.img_url = app.models.spell.findById(p.spell2.id).img_url;
-      _.each(p.runes, function(r) {
-        r.img_url = app.models.rune.findById(r.id).img_url;
-      });
-    });
-  })
-}
+
 app.models.game.prototype.ensureTeamInfo = function() {
   _.each(this.data.teams, function(team) {
     if (team.id == 100) {
@@ -131,9 +116,9 @@ app.models.game.prototype.genChartData = function() {
         }, {
           nodata: false,
           label: "Win",
-          rate: p.ranked_stat_recent.win_rate,
+          rate: p.ranked_stat_overall.win_rate,
           bar_class: "win",
-          drate: p.ranked_stat_recent.win_rate - (p.ranked_stat_overall ? p.ranked_stat_overall.win_rate : 0),
+          drate: 0,
           description: ""
         }];
       } else {
