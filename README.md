@@ -1,13 +1,19 @@
-# LoLCaf
+# LeagueGG.com Mobile
 
-[GAME INFO](wiki/GAMEINFO.md)
+Search League of Legends live game and show stats and analysis for each player of current game. In game live stream from Twitch TV (Mobile), see professional champion plays and suggested builds from pro players.
 
-[CONFIG & VERSION MANAGEMENT](wiki/CONFIG.md)
 
-[DEVELOPMENT](wiki/DEVELOPMENT.md)
+![GUI](doc/leaguegg-mobile.png)
 
-[RELEASE](wiki/RELEASE.md)
+## This project is no longer maintained for the following reasons
 
-[CHANGE LOGS](wiki/CHANGELOGS.md)
+  - Riot updated league of legend api, I have no time to rewrite.
+  - It uses angular.js (first version), I have no time to upgrade.
 
-[TODO](wiki/TODO.md)
+## API Project
+
+  [LeagueGG API](https://github.com/tianhsky/leaguegg.com)
+
+## Author
+
+  [Tianyu Huang](http://www.devporo.com)
